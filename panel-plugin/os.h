@@ -24,7 +24,7 @@
 #ifndef _XFCE_OS_H_
 #define _XFCE_OS_H_
 
-#define CPU_SCALE 256
+#define CPU_SCALE 100
 
 #include <glib.h>
 

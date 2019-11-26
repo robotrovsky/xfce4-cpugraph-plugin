@@ -403,8 +403,13 @@ update_cb (NVGPUGraph *base)
 static void
 update_tooltip (NVGPUGraph *base)
 {
+    guint i;
     gchar tooltip[32];
-    g_snprintf (tooltip, 32, _("Usage: %u%%"), (guint) base->cpu_data[0].load * 100 / CPU_SCALE);
+    guint load_sum = 0;
+    for (i = 0; i < base->nr_cores; i++)
+        load_sum += base->cpu_data[i].load;
+    
+    g_snprintf (tooltip, 32, _("Usage: %u%%"), (guint) (load_sum / base->nr_cores));
     gtk_label_set_text (GTK_LABEL (base->tooltip_text), tooltip);
 }
 
