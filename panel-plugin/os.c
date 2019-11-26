@@ -63,7 +63,7 @@ detect_cpu_number ()
 }
 
 gboolean
-read_cpu_data_gpu (CpuData *data, guint nb_cpu)
+read_cpu_data (CpuData *data, guint nb_cpu)
 {
     FILE *fp;
     gchar query_string[QUERYMAXLEN];
