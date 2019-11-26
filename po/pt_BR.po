@@ -19,7 +19,7 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/cpu.c:160 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "Representação gráfica do uso da CPU"
 
@@ -170,6 +170,6 @@ msgstr "Fogo"
 msgid "Color mode: "
 msgstr "Modo de cor: "
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "Gráfico da CPU"

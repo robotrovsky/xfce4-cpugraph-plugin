@@ -44,7 +44,7 @@ default_command (const gchar **command, gboolean *in_terminal, gboolean *startup
 }
 
 void
-read_settings (XfcePanelPlugin *plugin, CPUGraph *base)
+read_settings (XfcePanelPlugin *plugin, NVGPUGraph *base)
 {
     const char *value;
     char *file;
@@ -154,7 +154,7 @@ read_settings (XfcePanelPlugin *plugin, CPUGraph *base)
 }
 
 void
-write_settings (XfcePanelPlugin *plugin, CPUGraph *base)
+write_settings (XfcePanelPlugin *plugin, NVGPUGraph *base)
 {
     XfceRc *rc;
     char *file;

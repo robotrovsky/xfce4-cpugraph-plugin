@@ -19,7 +19,7 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: ../panel-plugin/cpu.c:153 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:153 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "تمثيل رسومي لحمل وحدة المعالجة المركزية"
 
@@ -170,6 +170,6 @@ msgstr "نار"
 msgid "Color mode: "
 msgstr "نمط اللون: "
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "الرسم البياني لوحدة المعالجة المركزية"

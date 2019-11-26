@@ -17,7 +17,7 @@ msgstr ""
 "Language: ur_PK\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/cpu.c:153 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:153 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "گریفکل نمائندہ برائے CPU لوڈ"
 
@@ -164,6 +164,6 @@ msgstr "آگ"
 msgid "Color mode: "
 msgstr "رنگ موڈ:"
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "سی پی یو گراف"

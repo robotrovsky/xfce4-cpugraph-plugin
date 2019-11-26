@@ -18,7 +18,7 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: ../panel-plugin/cpu.c:160 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "תיאור גרפי של עומס המעבד"
 
@@ -171,6 +171,6 @@ msgstr "אש"
 msgid "Color mode: "
 msgstr "מצב צבע:"
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "גרף מעבד"

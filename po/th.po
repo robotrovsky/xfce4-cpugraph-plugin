@@ -19,7 +19,7 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/cpu.c:160 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "แสดงโหลดของซีพียูในแบบกราฟิกส์"
 
@@ -169,6 +169,6 @@ msgstr "ไฟ"
 msgid "Color mode: "
 msgstr "รูปแบบสี:"
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "กราฟซีพียู"

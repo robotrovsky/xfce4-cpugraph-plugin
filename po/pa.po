@@ -18,7 +18,7 @@ msgstr ""
 "Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/cpu.c:153 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:153 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "CPU ਲੋਡ ਲਈ ਗਰਾਫਿਕਲ ਦਿੱਖ"
 
@@ -165,6 +165,6 @@ msgstr "ਫਾਇਰ"
 msgid "Color mode: "
 msgstr "ਰੰਗ ਮੋਡ: "
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "CPU ਗਰਾਫ਼"

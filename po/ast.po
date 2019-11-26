@@ -18,7 +18,7 @@ msgstr ""
 "Language: ast\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/cpu.c:153 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:153 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "Representación gráfica de la carga de CPU"
 
@@ -165,6 +165,6 @@ msgstr "Fueu"
 msgid "Color mode: "
 msgstr "Mou de color:"
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "Gráfica de CPU"

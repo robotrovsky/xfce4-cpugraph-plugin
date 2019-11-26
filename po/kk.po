@@ -18,7 +18,7 @@ msgstr ""
 "Language: kk\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../panel-plugin/cpu.c:160 ../panel-plugin/cpugraph.desktop.in.h:2
+#: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the CPU load"
 msgstr "Процессор жүктелудің графикалық бейнелеуі"
 
@@ -169,6 +169,6 @@ msgstr "Жалын"
 msgid "Color mode: "
 msgstr "Түс режимі:"
 
-#: ../panel-plugin/cpugraph.desktop.in.h:1
+#: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "CPU Graph"
 msgstr "CPU Graph"
