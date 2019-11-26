@@ -1,5 +1,5 @@
 /*  cpu.c
- *  Part of xfce4-cpugraph-plugin
+ *  Part of xfce4-nvgpugraph-plugin
  *
  *  Copyright (c) Alexander Nordfelth <alex.nordfelth@telia.com>
  *  Copyright (c) gatopeich <gatoguan-os@yahoo.com>
@@ -32,48 +32,48 @@
 # define _(String) gettext (String)
 #endif
 
-static void       cpugraph_construct   (XfcePanelPlugin    *plugin);
-static CPUGraph  *create_gui           (XfcePanelPlugin    *plugin);
-static void       create_bars          (CPUGraph           *base);
+static void       nvgpugraph_construct   (XfcePanelPlugin    *plugin);
+static NVGPUGraph *create_gui           (XfcePanelPlugin    *plugin);
+static void       create_bars          (NVGPUGraph           *base);
 static guint      init_cpu_data        (CpuData           **data);
 static void       shutdown             (XfcePanelPlugin    *plugin,
-                                        CPUGraph           *base);
-static void       delete_bars          (CPUGraph           *base);
+                                        NVGPUGraph           *base);
+static void       delete_bars          (NVGPUGraph           *base);
 static gboolean   size_cb              (XfcePanelPlugin    *plugin,
                                         guint               size,
-                                        CPUGraph           *base);
+                                        NVGPUGraph           *base);
 static void       about_cb             (XfcePanelPlugin    *plugin,
-                                        CPUGraph           *base);
-static void       set_bars_size        (CPUGraph           *base,
+                                        NVGPUGraph           *base);
+static void       set_bars_size        (NVGPUGraph           *base,
                                         gint                size,
                                         GtkOrientation      orientation);
 static void       mode_cb              (XfcePanelPlugin    *plugin,
                                         XfcePanelPluginMode mode,
-                                        CPUGraph           *base);
-static void       set_bars_color       (CPUGraph           *base);
-static void       set_bars_orientation (CPUGraph           *base,
+                                        NVGPUGraph           *base);
+static void       set_bars_color       (NVGPUGraph           *base);
+static void       set_bars_orientation (NVGPUGraph           *base,
                                         GtkOrientation      orientation);
-static gboolean   update_cb            (CPUGraph           *base);
-static void       update_tooltip       (CPUGraph           *base);
+static gboolean   update_cb            (NVGPUGraph           *base);
+static void       update_tooltip       (NVGPUGraph           *base);
 static gboolean   tooltip_cb           (GtkWidget          *widget,
                                         gint                x,
                                         gint                y,
                                         gboolean            keyboard,
                                         GtkTooltip         *tooltip,
-                                        CPUGraph           *base);
+                                        NVGPUGraph           *base);
 static void       draw_area_cb         (GtkWidget          *w,
                                         cairo_t            *cr,
                                         gpointer            data);
 static gboolean   command_cb           (GtkWidget          *w,
                                         GdkEventButton     *event,
-                                        CPUGraph           *base);
+                                        NVGPUGraph           *base);
 
-XFCE_PANEL_PLUGIN_REGISTER (cpugraph_construct);
+XFCE_PANEL_PLUGIN_REGISTER (nvgpugraph_construct);
 
 static void
-cpugraph_construct (XfcePanelPlugin *plugin)
+nvgpugraph_construct (XfcePanelPlugin *plugin)
 {
-    CPUGraph *base;
+    NVGPUGraph *base;
 
     xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -91,12 +91,12 @@ cpugraph_construct (XfcePanelPlugin *plugin)
     g_signal_connect (plugin, "mode-changed", G_CALLBACK (mode_cb), base);
 }
 
-static CPUGraph *
+static NVGPUGraph *
 create_gui (XfcePanelPlugin *plugin)
 {
     GtkWidget *frame, *ebox;
     GtkOrientation orientation;
-    CPUGraph *base = g_new0 (CPUGraph, 1);
+    NVGPUGraph *base = g_new0 (NVGPUGraph, 1);
 
     orientation = xfce_panel_plugin_get_orientation (plugin);
     if ((base->nr_cores = init_cpu_data (&base->cpu_data)) == 0)
@@ -144,21 +144,21 @@ create_gui (XfcePanelPlugin *plugin)
 }
 
 static void
-about_cb (XfcePanelPlugin *plugin, CPUGraph *base)
+about_cb (XfcePanelPlugin *plugin, NVGPUGraph *base)
 {
     GdkPixbuf *icon;
     const gchar *auth[] = {
         "Alexander Nordfelth <alex.nordfelth@telia.com>", "gatopeich <gatoguan-os@yahoo.com>",
         "lidiriel <lidiriel@coriolys.org>","Angelo Miguel Arrifano <miknix@gmail.com>",
         "Florian Rivoal <frivoal@gmail.com>","Peter Tribble <peter.tribble@gmail.com>", NULL};
-    icon = xfce_panel_pixbuf_from_source ("xfce4-cpugraph-plugin", NULL, 32);
+    icon = xfce_panel_pixbuf_from_source ("xfce4-nvgpugraph-plugin", NULL, 32);
     gtk_show_about_dialog (NULL,
         "logo", icon,
         "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
         "version", PACKAGE_VERSION,
         "program-name", PACKAGE_NAME,
-        "comments", _("Graphical representation of the CPU load"),
-        "website", "https://goodies.xfce.org/projects/panel-plugins/xfce4-cpugraph-plugin",
+        "comments", _("Graphical representation of the nvidia GPU load"),
+        "website", "https://goodies.xfce.org/projects/panel-plugins/xfce4-nvgpugraph-plugin",
         "copyright", _("Copyright (c) 2003-2019\n"),
         "authors", auth, NULL);
 
@@ -167,13 +167,13 @@ about_cb (XfcePanelPlugin *plugin, CPUGraph *base)
 }
 
 static guint
-nb_bars (CPUGraph *base)
+nb_bars (NVGPUGraph *base)
 {
     return base->tracked_core == 0 ? base->nr_cores : 1;
 }
 
 static void
-create_bars (CPUGraph *base)
+create_bars (NVGPUGraph *base)
 {
     guint i;
     guint n;
@@ -207,7 +207,7 @@ init_cpu_data (CpuData **data)
 }
 
 static void
-shutdown (XfcePanelPlugin *plugin, CPUGraph *base)
+shutdown (XfcePanelPlugin *plugin, NVGPUGraph *base)
 {
     g_free (base->cpu_data);
     delete_bars (base);
@@ -221,7 +221,7 @@ shutdown (XfcePanelPlugin *plugin, CPUGraph *base)
 }
 
 static void
-delete_bars (CPUGraph *base)
+delete_bars (NVGPUGraph *base)
 {
     guint i;
     guint n;
@@ -239,7 +239,7 @@ delete_bars (CPUGraph *base)
 }
 
 static gboolean
-size_cb (XfcePanelPlugin *plugin, guint size, CPUGraph *base)
+size_cb (XfcePanelPlugin *plugin, guint size, NVGPUGraph *base)
 {
     gint frame_h, frame_v, history;
     GtkOrientation orientation;
@@ -274,7 +274,7 @@ size_cb (XfcePanelPlugin *plugin, guint size, CPUGraph *base)
 }
 
 static void
-set_bars_size (CPUGraph *base, gint size, GtkOrientation orientation)
+set_bars_size (NVGPUGraph *base, gint size, GtkOrientation orientation)
 {
     guint i;
     guint n;
@@ -297,7 +297,7 @@ set_bars_size (CPUGraph *base, gint size, GtkOrientation orientation)
 }
 
 static void
-mode_cb (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, CPUGraph *base)
+mode_cb (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, NVGPUGraph *base)
 {
     GtkOrientation orientation = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
         GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
@@ -312,7 +312,7 @@ mode_cb (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, CPUGraph *base)
 }
 
 static void
-set_bars_color (CPUGraph *base)
+set_bars_color (NVGPUGraph *base)
 {
     gchar *color = gdk_rgba_to_string (&base->colors[4]);
     gchar *css = g_strdup_printf ("progressbar progress { \
@@ -327,7 +327,7 @@ set_bars_color (CPUGraph *base)
 }
 
 static void
-set_bars_orientation (CPUGraph *base, GtkOrientation orientation)
+set_bars_orientation (NVGPUGraph *base, GtkOrientation orientation)
 {
     guint i, n;
 
@@ -345,7 +345,7 @@ set_bars_orientation (CPUGraph *base, GtkOrientation orientation)
 }
 
 static gboolean
-update_cb (CPUGraph *base)
+update_cb (NVGPUGraph *base)
 {
     gint i, a, b, factor;
 
@@ -401,7 +401,7 @@ update_cb (CPUGraph *base)
 }
 
 static void
-update_tooltip (CPUGraph *base)
+update_tooltip (NVGPUGraph *base)
 {
     gchar tooltip[32];
     g_snprintf (tooltip, 32, _("Usage: %u%%"), (guint) base->cpu_data[0].load * 100 / CPU_SCALE);
@@ -409,7 +409,7 @@ update_tooltip (CPUGraph *base)
 }
 
 static gboolean
-tooltip_cb (GtkWidget *widget, gint x, gint y, gboolean keyboard, GtkTooltip *tooltip, CPUGraph *base)
+tooltip_cb (GtkWidget *widget, gint x, gint y, gboolean keyboard, GtkTooltip *tooltip, NVGPUGraph *base)
 {
     gtk_tooltip_set_custom (tooltip, base->tooltip_text);
     return TRUE;
@@ -418,7 +418,7 @@ tooltip_cb (GtkWidget *widget, gint x, gint y, gboolean keyboard, GtkTooltip *to
 static void
 draw_area_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
 {
-    CPUGraph *base = (CPUGraph *) data;
+    NVGPUGraph *base = (NVGPUGraph *) data;
     GtkAllocation alloc;
     gint w, h;
 
@@ -448,7 +448,7 @@ draw_area_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
 }
 
 static gboolean
-command_cb (GtkWidget *w, GdkEventButton *event, CPUGraph *base)
+command_cb (GtkWidget *w, GdkEventButton *event, NVGPUGraph *base)
 {
     if (event->button == 1 && base->command)
     {
@@ -460,26 +460,26 @@ command_cb (GtkWidget *w, GdkEventButton *event, CPUGraph *base)
 }
 
 void
-set_startup_notification (CPUGraph *base, gboolean startup_notification)
+set_startup_notification (NVGPUGraph *base, gboolean startup_notification)
 {
     base->startup_notification = startup_notification;
 }
 
 void
-set_in_terminal (CPUGraph *base, gboolean in_terminal)
+set_in_terminal (NVGPUGraph *base, gboolean in_terminal)
 {
     base->in_terminal = in_terminal;
 }
 
 void
-set_command (CPUGraph *base, const gchar *command)
+set_command (NVGPUGraph *base, const gchar *command)
 {
     g_free (base->command);
     base->command = g_strdup (command);
 }
 
 void
-set_bars (CPUGraph *base, gboolean bars)
+set_bars (NVGPUGraph *base, gboolean bars)
 {
     GtkOrientation orientation;
 
@@ -499,7 +499,7 @@ set_bars (CPUGraph *base, gboolean bars)
 }
 
 void
-set_border (CPUGraph *base, gboolean border)
+set_border (NVGPUGraph *base, gboolean border)
 {
     int border_width = (xfce_panel_plugin_get_size (base->plugin) > 26 ? 2 : 1);
     base->has_border = border;
@@ -509,20 +509,20 @@ set_border (CPUGraph *base, gboolean border)
 }
 
 void
-set_frame (CPUGraph *base, gboolean frame)
+set_frame (NVGPUGraph *base, gboolean frame)
 {
     base->has_frame = frame;
     gtk_frame_set_shadow_type (GTK_FRAME (base->frame_widget), base->has_frame ? GTK_SHADOW_IN : GTK_SHADOW_NONE);
 }
 
 void
-set_nonlinear_time (CPUGraph *base, gboolean nonlinear)
+set_nonlinear_time (NVGPUGraph *base, gboolean nonlinear)
 {
     base->non_linear = nonlinear;
 }
 
 void
-set_update_rate (CPUGraph *base, guint rate)
+set_update_rate (NVGPUGraph *base, guint rate)
 {
     guint update;
 
@@ -549,20 +549,20 @@ set_update_rate (CPUGraph *base, guint rate)
 }
 
 void
-set_size (CPUGraph *base, guint size)
+set_size (NVGPUGraph *base, guint size)
 {
     base->size = size;
     size_cb (base->plugin, xfce_panel_plugin_get_size (base->plugin), base);
 }
 
 void
-set_color_mode (CPUGraph *base, guint color_mode)
+set_color_mode (NVGPUGraph *base, guint color_mode)
 {
     base->color_mode = color_mode;
 }
 
 void
-set_mode (CPUGraph *base, guint mode)
+set_mode (NVGPUGraph *base, guint mode)
 {
     base->mode = mode;
 
@@ -580,7 +580,7 @@ set_mode (CPUGraph *base, guint mode)
 }
 
 void
-set_color (CPUGraph *base, guint number, GdkRGBA color)
+set_color (NVGPUGraph *base, guint number, GdkRGBA color)
 {
     guint i, n;
 
@@ -601,7 +601,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 void
-set_tracked_core (CPUGraph *base, guint core)
+set_tracked_core (NVGPUGraph *base, guint core)
 {
     gboolean has_bars = base->has_bars;
     if (has_bars)
