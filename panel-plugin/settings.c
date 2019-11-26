@@ -27,11 +27,11 @@
 static void
 default_command (const gchar **command, gboolean *in_terminal, gboolean *startup_notification)
 {
-    gchar *s = g_find_program_in_path ("xfce4-taskmanager");
+    gchar *s = g_find_program_in_path ("nvidia-settings");
     if (s != NULL)
     {
         g_free (s);
-        *command = "xfce4-taskmanager";
+        *command = "nvidia-settings";
         *in_terminal = FALSE;
         *startup_notification = TRUE;
     }

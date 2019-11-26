@@ -129,7 +129,7 @@ create_options (XfcePanelPlugin *plugin, NVGPUGraph *base)
 
     xfce_panel_plugin_block_menu (plugin);
 
-    dlg = xfce_titled_dialog_new_with_buttons (_("CPU Graph Properties"),
+    dlg = xfce_titled_dialog_new_with_buttons (_("GPU Graph Properties"),
                                        GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
                                        GTK_DIALOG_DESTROY_WITH_PARENT,
                                        "_Close",
@@ -278,7 +278,7 @@ setup_tracked_core_option (GtkBox *vbox, GtkSizeGroup *sg, NVGPUGraph *base)
         items[i] = g_strdup_printf ("%u", i);
     }
 
-    create_drop_down (vbox, sg, _("Tracked Core:"), (const gchar **) items, nb_items, base->tracked_core, change_core, base);
+    create_drop_down (vbox, sg, _("Tracked GPU:"), (const gchar **) items, nb_items, base->tracked_core, change_core, base);
     for (i = 1; i < nb_items; i++)
         g_free (items[i]);
 }

@@ -409,7 +409,7 @@ update_tooltip (NVGPUGraph *base)
     for (i = 0; i < base->nr_cores; i++)
         load_sum += base->cpu_data[i].load;
     
-    g_snprintf (tooltip, 32, _("Usage: %u%%"), (guint) (load_sum / base->nr_cores));
+    g_snprintf (tooltip, 32, _("GPU Usage: %u%%"), (guint) (load_sum / base->nr_cores));
     gtk_label_set_text (GTK_LABEL (base->tooltip_text), tooltip);
 }
 
