@@ -1,6 +1,24 @@
-CPU Graph plugin for the Xfce4 panel.
+nvidia GPU Graph plugin for the Xfce4 panel.
 
-This plugin displays an graph from your latest system load.
+This plugin displays a nvidia gpu load graph. Multiple GPU's are supported. The plugin is based on the CPU Graph plugin.
+
+
+To install on Xubuntu:
+1. clone repository
+
+2. install dependencies:
+    sudo apt install xfce4-dev-tools libxfce4ui-2-dev libxfce4panel-2.0-dev
+    
+3. run:
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
+    sudo make install
+    
+4. right-click on the panel and add like any other panel-plugin.
+
+
+
 
 Currently supporting Linux, FreeBSD, NetBSD and OpenBSD, GNU/kFreeBSD and
 Solaris. The *BSD support is derived from Riccardo's
@@ -12,7 +30,7 @@ supported languages.
 --------
 How to use
 ----
-Just add it to your xfce pannel, and it should display the CPU usage in an easy
+Just add it to your xfce pannel, and it should display the GPU usage in an easy
 to understand way.
 
 A left click on the plugin will launch xfce4-taskmanager, or if you don't have
@@ -64,14 +82,14 @@ Color 3: None - Normal: This color isn't used.
 
 In the second tab of the properties, the following options are available:
 
-* Update interval: How often the graph is refreshed with new CPU data
+* Update interval: How often the graph is refreshed with new GPU data
 
-* Tracked core: On multi core or multi CPU systems, allows to pick whether CPU
-		Graph should display data representing all cores/CPUs or only a
+* Tracked core: On multi core or multi GPU systems, allows to pick whether GPU
+		Graph should display data representing all cores/GPUs or only a
                 specific one.
 
 * Width / Height: Depending on the orientation of the xfce panel, allows to
-                  change the width or height of the CPU Graph plugin.
+                  change the width or height of the GPU Graph plugin.
 
 * Non-linear time scale: When checked, scrolling will work differently.  Try
                          and see.
@@ -82,8 +100,8 @@ In the second tab of the properties, the following options are available:
                the plugin.
 
 * Show current usage bars: When checked, in addition to the main graph area,
-			   the plugin show one bar per core/CPU, displaying the
-                           current load of that core/CPU.
+			   the plugin show one bar per core/GPU, displaying the
+                           current load of that core/GPU.
 
 * Associated command: Sets the command to run when the plugin is left-clicked.
 
