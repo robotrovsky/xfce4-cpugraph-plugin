@@ -1,16 +1,16 @@
 plugindir = $(libdir)/xfce4/panel/plugins
-plugin_LTLIBRARIES = libcpugraph.la
+plugin_LTLIBRARIES = libnvgpugraph.la
 
-libcpugraph_la_CFLAGS =							\
+libnvgpugraph_la_CFLAGS =							\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	@LIBXFCE4UI_CFLAGS@							\
 	@LIBXFCE4PANEL_CFLAGS@
 
-libcpugraph_la_LIBADD =							\
+libnvgpugraph_la_LIBADD =							\
 	@LIBXFCE4UI_LIBS@							\
 	@LIBXFCE4PANEL_LIBS@
 
-libcpugraph_la_SOURCES =						\
+libnvgpugraph_la_SOURCES =						\
 	mode.c										\
 	mode.h										\
 	cpu.c										\
@@ -22,7 +22,7 @@ libcpugraph_la_SOURCES =						\
 	settings.c									\
 	settings.h
 
-libcpugraph_la_LDFLAGS =	\
+libnvgpugraph_la_LDFLAGS =	\
 	-avoid-version	\
 	-module	\
 	-no-undefined	\
@@ -32,7 +32,7 @@ libcpugraph_la_LDFLAGS =	\
 #
 # .desktop file
 #
-desktop_in_files = cpugraph.desktop.in
+desktop_in_files = nvgpugraph.desktop.in
 
 desktopdir = $(datadir)/xfce4/panel/plugins
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
