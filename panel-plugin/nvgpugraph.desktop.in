@@ -2,7 +2,7 @@
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
 _Name=NVIDIA GPU Graph
-_Comment=Graphical representation of the nvidia GPU load
+_Comment=Graphical representation of the GPU load
 Icon=xfce4-cpugraph-plugin
 X-XFCE-Module=nvgpugraph
 X-XFCE-Unique=FALSE

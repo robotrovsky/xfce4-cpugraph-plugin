@@ -158,7 +158,7 @@ about_cb (XfcePanelPlugin *plugin, NVGPUGraph *base)
         "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
         "version", PACKAGE_VERSION,
         "program-name", PACKAGE_NAME,
-        "comments", _("Graphical representation of the nvidia GPU load"),
+        "comments", _("Graphical representation of the GPU load"),
         "website", "https://goodies.xfce.org/projects/panel-plugins/xfce4-nvgpugraph-plugin",
         "copyright", _("Copyright (c) 2003-2020\n"),
         "authors", auth, NULL);
