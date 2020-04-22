@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
+msgid "Graphical representation of the GPU load"
 msgstr "Perwakilan bergrafik bagi muatan CPU"
 
 #: ../panel-plugin/cpu.c:162
@@ -32,7 +32,7 @@ msgid "Usage: %u%%"
 msgstr "Pengguna: %u%%"
 
 #: ../panel-plugin/properties.c:132
-msgid "CPU Graph Properties"
+msgid "GPU Graph Properties"
 msgstr "Sifat Graf CPU"
 
 #: ../panel-plugin/properties.c:149
@@ -169,5 +169,5 @@ msgid "Color mode: "
 msgstr "Mod warna:"
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
+msgid "GPU Graph"
 msgstr "Graf CPU"

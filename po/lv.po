@@ -20,8 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 #: ../panel-plugin/cpu.c:153 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
-msgstr "Grafiska CPU noslodzes attēlošana"
+msgid "Graphical representation of the GPU load"
+msgstr "Grafiska GPU noslodzes attēlošana"
 
 #: ../panel-plugin/cpu.c:155
 msgid "Copyright (c) 2003-2012\n"
@@ -33,7 +33,7 @@ msgid "Usage: %u%%"
 msgstr ""
 
 #: ../panel-plugin/properties.c:80
-msgid "CPU Graph Properties"
+msgid "GPU Graph Properties"
 msgstr ""
 
 #: ../panel-plugin/properties.c:98
@@ -168,5 +168,5 @@ msgid "Color mode: "
 msgstr "Krāsu režīms: "
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
-msgstr "CPU grafs"
+msgid "GPU Graph"
+msgstr "GPU grafs"

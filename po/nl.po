@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
+msgid "Graphical representation of the GPU load"
 msgstr "Grafische weergave van de processorbelasting"
 
 #: ../panel-plugin/cpu.c:162
@@ -32,8 +32,8 @@ msgid "Usage: %u%%"
 msgstr "Gebruik: %u%%"
 
 #: ../panel-plugin/properties.c:132
-msgid "CPU Graph Properties"
-msgstr "Eigenschappen van CPU Graph"
+msgid "GPU Graph Properties"
+msgstr "Eigenschappen van GPU Graph"
 
 #: ../panel-plugin/properties.c:149
 msgid "Use non-linear time-scale"
@@ -170,5 +170,5 @@ msgid "Color mode: "
 msgstr "Kleurmodus: "
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
-msgstr "CPU Graph"
+msgid "GPU Graph"
+msgstr "GPU Graph"

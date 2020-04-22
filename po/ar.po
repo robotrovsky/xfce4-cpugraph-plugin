@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../panel-plugin/cpu.c:153 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
+msgid "Graphical representation of the GPU load"
 msgstr "تمثيل رسومي لحمل وحدة المعالجة المركزية"
 
 #: ../panel-plugin/cpu.c:155
@@ -33,7 +33,7 @@ msgid "Usage: %u%%"
 msgstr "الإستخدام: %u%%"
 
 #: ../panel-plugin/properties.c:80
-msgid "CPU Graph Properties"
+msgid "GPU Graph Properties"
 msgstr "خصائص الرسم البياني لوحدة المعالجة المركزية"
 
 #: ../panel-plugin/properties.c:98
@@ -171,5 +171,5 @@ msgid "Color mode: "
 msgstr "نمط اللون: "
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
+msgid "GPU Graph"
 msgstr "الرسم البياني لوحدة المعالجة المركزية"

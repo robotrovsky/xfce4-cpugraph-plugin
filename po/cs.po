@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
+msgid "Graphical representation of the GPU load"
 msgstr "Grafická reprezentace zatížení procesoru"
 
 #: ../panel-plugin/cpu.c:162
@@ -32,7 +32,7 @@ msgid "Usage: %u%%"
 msgstr "Použití: %u%%"
 
 #: ../panel-plugin/properties.c:132
-msgid "CPU Graph Properties"
+msgid "GPU Graph Properties"
 msgstr "Vlastnosti Grafu procesoru"
 
 #: ../panel-plugin/properties.c:149
@@ -172,5 +172,5 @@ msgid "Color mode: "
 msgstr "Barvený režim:"
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
+msgid "GPU Graph"
 msgstr "Graf procesoru"

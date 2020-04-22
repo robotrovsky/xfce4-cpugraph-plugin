@@ -30,6 +30,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 #define NV_SMI "nvidia-smi --query-gpu=utilization.gpu --format=csv"
 #define NV_SMI_QUERY_HEADER "utilization.gpu [%]"
@@ -74,6 +75,8 @@ read_cpu_data (CpuData *data, guint nb_cpu)
     if (fp == NULL)
     return FALSE;
 
+    data[0].load = 0;
+
     if ((fgets(query_string, sizeof(query_string), fp) != NULL) &&	
 	    (strncmp (query_string, NV_SMI_QUERY_HEADER, NV_SMI_QUERY_HEADER_LEN) == 0))
     {
@@ -87,15 +90,17 @@ read_cpu_data (CpuData *data, guint nb_cpu)
                 pclose(fp);
                 return FALSE;
             }
-                
-            data[line].load = utilization;
+
+            data[nb_cpu - line].load = utilization;
+            data[0].load += utilization;
             line++;
         }
 
     }
 
+    data[0].load = roundf((float) data[0].load / (float)nb_cpu);
+
     pclose(fp);
 
     return TRUE;
 }
-

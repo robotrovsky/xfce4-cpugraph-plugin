@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
+msgid "Graphical representation of the GPU load"
 msgstr "Γραφική αναπαράσταση του φόρτου της CPU"
 
 #: ../panel-plugin/cpu.c:162
@@ -33,7 +33,7 @@ msgid "Usage: %u%%"
 msgstr "Χρήση: %u%%"
 
 #: ../panel-plugin/properties.c:132
-msgid "CPU Graph Properties"
+msgid "GPU Graph Properties"
 msgstr "Ιδιότητες Γραφήματος CPU"
 
 #: ../panel-plugin/properties.c:149
@@ -171,5 +171,5 @@ msgid "Color mode: "
 msgstr "Λειτουργία χρώματος:"
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
+msgid "GPU Graph"
 msgstr "Γράφημα CPU"

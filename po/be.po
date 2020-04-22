@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../panel-plugin/cpu.c:160 ../panel-plugin/nvgpugraph.desktop.in.h:2
-msgid "Graphical representation of the CPU load"
+msgid "Graphical representation of the GPU load"
 msgstr "Графічнае прадстаўленне нагрузкі на ЦП"
 
 #: ../panel-plugin/cpu.c:162
@@ -34,8 +34,8 @@ msgid "Usage: %u%%"
 msgstr "Выкарыстанне: %u%%"
 
 #: ../panel-plugin/properties.c:132
-msgid "CPU Graph Properties"
-msgstr "Уласцівасці CPU Graph"
+msgid "GPU Graph Properties"
+msgstr "Уласцівасці GPU Graph"
 
 #: ../panel-plugin/properties.c:149
 msgid "Use non-linear time-scale"
@@ -174,5 +174,5 @@ msgid "Color mode: "
 msgstr "Рэжым колераў: "
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
-msgid "CPU Graph"
+msgid "GPU Graph"
 msgstr "Графікі ЦП"
