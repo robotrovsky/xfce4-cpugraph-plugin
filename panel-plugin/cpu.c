@@ -150,7 +150,8 @@ about_cb (XfcePanelPlugin *plugin, NVGPUGraph *base)
     const gchar *auth[] = {
         "Alexander Nordfelth <alex.nordfelth@telia.com>", "gatopeich <gatoguan-os@yahoo.com>",
         "lidiriel <lidiriel@coriolys.org>","Angelo Miguel Arrifano <miknix@gmail.com>",
-        "Florian Rivoal <frivoal@gmail.com>","Peter Tribble <peter.tribble@gmail.com>", NULL};
+        "Florian Rivoal <frivoal@gmail.com>","Peter Tribble <peter.tribble@gmail.com>",
+        "Marek Wyborski <marek.wyborski@emwesoft.com>", NULL};
     icon = xfce_panel_pixbuf_from_source ("xfce4-nvgpugraph-plugin", NULL, 32);
     gtk_show_about_dialog (NULL,
         "logo", icon,
@@ -159,7 +160,7 @@ about_cb (XfcePanelPlugin *plugin, NVGPUGraph *base)
         "program-name", PACKAGE_NAME,
         "comments", _("Graphical representation of the nvidia GPU load"),
         "website", "https://goodies.xfce.org/projects/panel-plugins/xfce4-nvgpugraph-plugin",
-        "copyright", _("Copyright (c) 2003-2019\n"),
+        "copyright", _("Copyright (c) 2003-2020\n"),
         "authors", auth, NULL);
 
     if (icon)
@@ -404,7 +405,7 @@ static void
 update_tooltip (NVGPUGraph *base)
 {
     gchar tooltip[32];
-    g_snprintf (tooltip, 32, _("GPU Usage: %u%%"), (guint) base->cpu_data[0].load);
+    g_snprintf (tooltip, 32, g_strconcat("GPU ", _("Usage: %u%%"), NULL), (guint) base->cpu_data[0].load);
     gtk_label_set_text (GTK_LABEL (base->tooltip_text), tooltip);
 }
 

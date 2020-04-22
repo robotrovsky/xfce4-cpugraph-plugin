@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/cpu.c:132 ../panel-plugin/nvgpugraph.desktop.in.h:2
 msgid "Graphical representation of the GPU load"
-msgstr "Grafical representation del carga de CPU"
+msgstr "Grafical representation del carga de GPU"
 
 #: ../panel-plugin/cpu.c:134
 msgid "Copyright (c) 2003-2019\n"
@@ -33,7 +33,7 @@ msgstr "Usage: %u%%"
 
 #: ../panel-plugin/properties.c:80
 msgid "GPU Graph Properties"
-msgstr "Proprietás de grafico de CPU"
+msgstr "Proprietás de grafico de GPU"
 
 #: ../panel-plugin/properties.c:98
 msgid "Use non-linear time-scale"
@@ -167,4 +167,4 @@ msgstr "Mode de color:"
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "GPU Graph"
-msgstr "Grafico de CPU"
+msgstr "Grafico de GPU"

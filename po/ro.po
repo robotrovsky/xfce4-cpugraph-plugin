@@ -168,4 +168,4 @@ msgstr "Mod de colorare:"
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "GPU Graph"
-msgstr "Grafic CPU"
+msgstr "Grafic GPU"

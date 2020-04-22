@@ -35,7 +35,7 @@ msgstr "Użycie: %u%%"
 
 #: ../panel-plugin/properties.c:132
 msgid "GPU Graph Properties"
-msgstr "Monitor użycia CPU"
+msgstr "Monitor użycia GPU"
 
 #: ../panel-plugin/properties.c:149
 msgid "Use non-linear time-scale"
@@ -175,4 +175,4 @@ msgstr "Tryb kolorów:"
 
 #: ../panel-plugin/nvgpugraph.desktop.in.h:1
 msgid "GPU Graph"
-msgstr "Monitor użycia CPU"
+msgstr "Monitor użycia GPU"
