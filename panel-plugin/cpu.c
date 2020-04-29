@@ -404,10 +404,19 @@ update_cb (NVGPUGraph *base)
 static void
 update_tooltip (NVGPUGraph *base)
 {
-    gchar tooltip[32];
-    gchar* format = g_strconcat("GPU ", _("Usage: %u%%"), NULL);
-    g_snprintf (tooltip, 32, format, (guint) base->cpu_data[0].load);
+    gchar tooltip[255];
+    gint offset = 0;
+    guint i = 0;
+    gchar* format = g_strconcat("GPU %d ", _("Usage: %u%%"), "%c", NULL);
+    for (i = base->nr_cores; i > 0; i--)
+    {
+        if (offset < 255)
+            offset += g_snprintf (tooltip + offset, 255 - offset, format,
+                base->nr_cores - i , (guint) base->cpu_data[i].load,
+                i == 1 ? '\0': '\n');
+    }
     g_free(format);
+
     gtk_label_set_text (GTK_LABEL (base->tooltip_text), tooltip);
 }
 
