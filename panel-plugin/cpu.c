@@ -405,7 +405,9 @@ static void
 update_tooltip (NVGPUGraph *base)
 {
     gchar tooltip[32];
-    g_snprintf (tooltip, 32, g_strconcat("GPU ", _("Usage: %u%%"), NULL), (guint) base->cpu_data[0].load);
+    gchar* format = g_strconcat("GPU ", _("Usage: %u%%"), NULL);
+    g_snprintf (tooltip, 32, format, (guint) base->cpu_data[0].load);
+    g_free(format);
     gtk_label_set_text (GTK_LABEL (base->tooltip_text), tooltip);
 }
 
