@@ -89,9 +89,9 @@ read_settings (XfcePanelPlugin *plugin, NVGPUGraph *base)
     background.blue = 1.0;
     background.alpha = 0.0;
 
-    barscolor.red = 1.0;
-    barscolor.green = 0.73048;
-    barscolor.blue = 0.0;
+    barscolor.red = 0.0;
+    barscolor.green = 0.5;
+    barscolor.blue = 1.0;
     barscolor.alpha = 1.0;
 
     size = xfce_panel_plugin_get_size (plugin);
