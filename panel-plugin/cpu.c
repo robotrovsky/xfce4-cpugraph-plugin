@@ -372,6 +372,8 @@ update_cb (NVGPUGraph *base)
                     (gdouble) base->cpu_data[i+1].load / CPU_SCALE);
         }
     }
+    
+    update_tooltip (base);
 
     if (base->mode == -1)
     {
@@ -395,7 +397,6 @@ update_cb (NVGPUGraph *base)
     }
     base->history[0] = base->cpu_data[0].load;
 
-    update_tooltip (base);
     gtk_widget_queue_draw (base->draw_area);
 
     return TRUE;
