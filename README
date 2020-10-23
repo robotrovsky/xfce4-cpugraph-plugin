@@ -2,6 +2,7 @@ nvidia GPU Graph plugin for the Xfce4 panel.
 
 This plugin displays a nvidia gpu load graph. Multiple GPU's are supported. The plugin is based on the CPU Graph plugin.
 
+![Image of Plugin](https://www.emwesoft.com/images/gpugraph.png)
 
 To install on Xubuntu:
 1. clone repository
