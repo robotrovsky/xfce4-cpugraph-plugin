@@ -6,7 +6,10 @@ This plugin displays a nvidia GPU load graph/bars. Multiple GPU's are supported.
 
 A plugin for the GPU memory usage can be found at: https://github.com/mwyborski/xfce4-nvgpumemgraph-plugin
 
-To install on Xubuntu:
+
+--------
+Install on Xubuntu
+----
 1. clone repository
 
 2. install dependencies:
