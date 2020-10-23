@@ -1,8 +1,10 @@
 nvidia GPU Graph plugin for the Xfce4 panel.
 
-This plugin displays a nvidia GPU load graph. Multiple GPU's are supported. The plugin is based on the CPU Graph plugin and uses nvidia-smi to query the GPU load.
+This plugin displays a nvidia GPU load graph/bars. Multiple GPU's are supported. The plugin is based on the CPU Graph plugin and uses nvidia-smi to query the GPU load.
 
 ![Image of Plugin](https://www.emwesoft.com/images/gpugraph.png)
+
+A plugin for the GPU memory usage can be found at: https://github.com/mwyborski/xfce4-nvgpumemgraph-plugin
 
 To install on Xubuntu:
 1. clone repository
